@@ -288,6 +288,12 @@ for itr = 1:maxiter
     for i=1:N
        for j=1:M
            if (mask(i,j)==255)
+               if U(i,j)>255
+                   U(i,j)=255;
+               end
+               if U(i,j)<0
+                    U(i,j)=0;
+               end
                img(i,j) = U(i,j);
            end
        end
